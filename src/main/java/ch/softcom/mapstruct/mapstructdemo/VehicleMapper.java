@@ -15,4 +15,6 @@ public interface VehicleMapper {
     // Nothing needs to be specified - all the fields have the same names and are auto-mapped
     VehicleDto toDto(Vehicle vehicle);
 
+    // NOTE: MapStruct generates a method for mapping a list of Passengers automatically, simply by using PassengerMapper.
+
 }

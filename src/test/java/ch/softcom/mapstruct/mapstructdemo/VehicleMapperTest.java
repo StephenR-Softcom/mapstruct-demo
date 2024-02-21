@@ -43,6 +43,9 @@ class VehicleMapperTest {
         then(dto).hasNoNullFieldsOrPropertiesExcept("passengers");
         then(dto.getModel()).isEqualTo(vehicle.getModel());
         then(dto.getType()).isEqualTo(vehicle.getType().name());
+        then(dto.getPassengers())
+                .isNotNull()
+                .isEmpty();
     }
 
     @Test
@@ -59,9 +62,10 @@ class VehicleMapperTest {
                 .build();
 
         // when
-        mapper.toDto(vehicle);
+        final VehicleDto dto = mapper.toDto(vehicle);
 
         // then
+        assertThat(dto).hasNoNullFieldsOrProperties();
         ArgumentCaptor<Passenger> passengerArgumentCaptor = ArgumentCaptor.forClass(Passenger.class);
         verify(passengerMapper, times(2)).toDto(passengerArgumentCaptor.capture());
         assertThat(passengerArgumentCaptor.getAllValues()).isEqualTo(vehicle.getPassengers());

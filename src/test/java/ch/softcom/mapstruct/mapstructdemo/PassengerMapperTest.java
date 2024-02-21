@@ -32,4 +32,21 @@ class PassengerMapperTest {
         then(dto.getLast()).isEqualTo(passenger.getLastName());
     }
 
+    @Test
+    void testFromDto() {
+        // given
+        final PassengerDto passengerDto = PassengerDto.builder()
+                .first("Arnold")
+                .last("Schwarzenegger")
+                .build();
+
+        // when
+        final Passenger passenger = mapper.fromDto(passengerDto);
+
+        // then
+        then(passenger).hasNoNullFieldsOrProperties();
+        then(passenger.getFirstName()).isEqualTo(passengerDto.getFirst());
+        then(passenger.getLastName()).isEqualTo(passengerDto.getLast());
+    }
+
 }
