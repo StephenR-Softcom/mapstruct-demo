@@ -31,4 +31,5 @@ class PassengerMapperTest {
         then(dto.getFirst()).isEqualTo(passenger.getFirstName());
         then(dto.getLast()).isEqualTo(passenger.getLastName());
     }
+
 }

@@ -16,7 +16,6 @@ public class Vehicle {
 
     int maxPassengers;
 
-    // TODO uncomment & enable the mapping
-    //List<Passenger> passengers;
+    List<Passenger> passengers;
 
 }

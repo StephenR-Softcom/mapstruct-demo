@@ -17,7 +17,6 @@ public class VehicleDto {
 
     // NOTE: maxPassengers is deliberately missing. MapStruct can deal with this.
 
-    // TODO uncomment & enable the mapping
-    //@NonNull List<PassengerDto> passengers;
+    @NonNull List<PassengerDto> passengers;
 
 }

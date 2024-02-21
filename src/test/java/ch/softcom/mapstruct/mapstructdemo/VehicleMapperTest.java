@@ -45,8 +45,6 @@ class VehicleMapperTest {
         then(dto.getType()).isEqualTo(vehicle.getType().name());
     }
 
-    // TODO uncomment
-    /*
     @Test
     void testPassengersAreMapped() {
         // given
@@ -61,13 +59,12 @@ class VehicleMapperTest {
                 .build();
 
         // when
-        final VehicleDto dto = mapper.toDto(vehicle);
+        mapper.toDto(vehicle);
 
         // then
         ArgumentCaptor<Passenger> passengerArgumentCaptor = ArgumentCaptor.forClass(Passenger.class);
         verify(passengerMapper, times(2)).toDto(passengerArgumentCaptor.capture());
         assertThat(passengerArgumentCaptor.getAllValues()).isEqualTo(vehicle.getPassengers());
     }
-    */
 
 }

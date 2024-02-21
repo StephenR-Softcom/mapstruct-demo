@@ -7,7 +7,6 @@ import lombok.Value;
 @Value
 public class PassengerDto {
     
-    // TODO map the fields manually, as field names do not match
     String first;
     String last;
 }

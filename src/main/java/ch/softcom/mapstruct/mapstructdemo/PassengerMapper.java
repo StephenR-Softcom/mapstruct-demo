@@ -8,8 +8,6 @@ import org.mapstruct.Mapping;
 @Mapper
 public interface PassengerMapper {
 
-    // TODO add mappings - see the IDE warning
-
     @Mapping(target = "first", source = "firstName")
     @Mapping(target = "last", source = "lastName")
     PassengerDto toDto(Passenger passenger);
